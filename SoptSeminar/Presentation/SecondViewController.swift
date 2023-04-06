@@ -36,16 +36,11 @@ final class SecondViewController: UIViewController {
 private extension SecondViewController {
     
     func style() {
-        
         view.backgroundColor = .white
     }
     
     func setLayout() {
-        
-        [nameLabel, backButton].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview($0)
-        }
+        view.addSubviews(nameLabel, backButton)
         
         nameLabel.snp.makeConstraints {
             $0.center.equalToSuperview()

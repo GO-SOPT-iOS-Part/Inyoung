@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		14061CC529DF19E800F290F5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 14061CC429DF19E800F290F5 /* SnapKit */; };
 		14061CC729DF23E900F290F5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14061CC629DF23E900F290F5 /* SecondViewController.swift */; };
+		14061CCC29DF2B4600F290F5 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14061CCB29DF2B4600F290F5 /* UIView+.swift */; };
 		1409A12529D7FA5500E13766 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409A12429D7FA5500E13766 /* AppDelegate.swift */; };
 		1409A12729D7FA5500E13766 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409A12629D7FA5500E13766 /* SceneDelegate.swift */; };
 		1409A12929D7FA5500E13766 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409A12829D7FA5500E13766 /* FirstViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		14061CC629DF23E900F290F5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		14061CCB29DF2B4600F290F5 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		1409A12129D7FA5500E13766 /* SoptSeminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoptSeminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1409A12429D7FA5500E13766 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1409A12629D7FA5500E13766 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14061CC829DF2AE700F290F5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1409A12A29D7FA5500E13766 /* Main.storyboard */,
+				1409A12F29D7FA5700E13766 /* LaunchScreen.storyboard */,
+				1409A12629D7FA5500E13766 /* SceneDelegate.swift */,
+				1409A12429D7FA5500E13766 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		14061CC929DF2AF100F290F5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				14061CC629DF23E900F290F5 /* SecondViewController.swift */,
+				1409A12829D7FA5500E13766 /* FirstViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		14061CCA29DF2B0100F290F5 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				14061CCE29DF2ED100F290F5 /* Resources */,
+				14061CCD29DF2EBC00F290F5 /* Extension */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		14061CCD29DF2EBC00F290F5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				14061CCB29DF2B4600F290F5 /* UIView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		14061CCE29DF2ED100F290F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1409A12D29D7FA5700E13766 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1409A11829D7FA5500E13766 = {
 			isa = PBXGroup;
 			children = (
@@ -60,13 +107,9 @@
 		1409A12329D7FA5500E13766 /* SoptSeminar */ = {
 			isa = PBXGroup;
 			children = (
-				1409A12429D7FA5500E13766 /* AppDelegate.swift */,
-				1409A12629D7FA5500E13766 /* SceneDelegate.swift */,
-				1409A12829D7FA5500E13766 /* FirstViewController.swift */,
-				14061CC629DF23E900F290F5 /* SecondViewController.swift */,
-				1409A12A29D7FA5500E13766 /* Main.storyboard */,
-				1409A12D29D7FA5700E13766 /* Assets.xcassets */,
-				1409A12F29D7FA5700E13766 /* LaunchScreen.storyboard */,
+				14061CCA29DF2B0100F290F5 /* Global */,
+				14061CC929DF2AF100F290F5 /* Presentation */,
+				14061CC829DF2AE700F290F5 /* Application */,
 				1409A13229D7FA5700E13766 /* Info.plist */,
 			);
 			path = SoptSeminar;
@@ -151,6 +194,7 @@
 			files = (
 				14061CC729DF23E900F290F5 /* SecondViewController.swift in Sources */,
 				1409A12929D7FA5500E13766 /* FirstViewController.swift in Sources */,
+				14061CCC29DF2B4600F290F5 /* UIView+.swift in Sources */,
 				1409A12529D7FA5500E13766 /* AppDelegate.swift in Sources */,
 				1409A12729D7FA5500E13766 /* SceneDelegate.swift in Sources */,
 			);

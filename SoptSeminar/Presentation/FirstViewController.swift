@@ -87,11 +87,7 @@ private extension FirstViewController {
     
     func setLayout() {
         
-        [nameLabel, nameTextField,
-         presentButton, pushButton].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview($0)
-        }
+        view.addSubviews(nameLabel, nameTextField, presentButton, pushButton)
         
         nameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(300)
