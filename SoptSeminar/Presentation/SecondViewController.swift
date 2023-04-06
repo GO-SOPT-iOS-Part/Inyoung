@@ -13,7 +13,7 @@ final class SecondViewController: UIViewController {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "제 이름은요!"
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 35)
         return label
     }()
     
@@ -22,6 +22,9 @@ final class SecondViewController: UIViewController {
         button.setTitle("뒤로가기", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 20)
+        button.addTarget(self,
+                         action: #selector(backButtonTapped),
+                         for: .touchUpInside)
         return button
     }()
     
@@ -30,6 +33,19 @@ final class SecondViewController: UIViewController {
         
         style()
         setLayout()
+    }
+    
+    @objc
+    func backButtonTapped() {
+        if self.navigationController == nil {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func getUserName(name: String){
+        nameLabel.text = "\(name)님 환영합니다"
     }
 }
 
@@ -47,7 +63,7 @@ private extension SecondViewController {
         }
         
         backButton.snp.makeConstraints {
-            $0.top.equalTo(nameLabel.snp.bottom).offset(20)
+            $0.top.equalTo(nameLabel.snp.bottom).offset(40)
             $0.centerX.equalToSuperview().inset(30)
             $0.height.equalTo(48)
         }

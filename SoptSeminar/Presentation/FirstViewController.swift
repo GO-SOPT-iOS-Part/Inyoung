@@ -41,6 +41,7 @@ final class FirstViewController: UIViewController {
         let button = UIButton()
         button.setTitle("present!", for: .normal)
         button.setTitleColor(.blue, for: .normal)
+        button.isEnabled = false
         button.addTarget(self, action: #selector(presentButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -49,15 +50,16 @@ final class FirstViewController: UIViewController {
         let button = UIButton()
         button.setTitle("push!", for: .normal)
         button.setTitleColor(.blue, for: .normal)
+        button.isEnabled = false
         button.addTarget(self, action: #selector(pushButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private let errorLabel: UILabel = {
        let label = UILabel()
-        label.text = "이름을 입력되지 않았습니다."
+        label.text = "이름이 입력되지 않았습니다."
         label.textColor = .red
-        label.font = .systemFont(ofSize: 13)
+        label.font = .systemFont(ofSize: 15)
         label.isHidden = true
         return label
     }()
@@ -67,7 +69,7 @@ final class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBackgroundColor()
+        setUI()
         setLayout()
         addKeyboardObserver()
     }
@@ -119,11 +121,13 @@ final class FirstViewController: UIViewController {
     func presentToSecondViewController() {
         let secondVC = SecondViewController()
         secondVC.modalPresentationStyle = .fullScreen
+        secondVC.getUserName(name: name)
         self.present(secondVC, animated: true)
     }
     
     func pushToSecondViewController() {
         let secondVC = SecondViewController()
+        secondVC.getUserName(name: name)
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
     
@@ -138,10 +142,13 @@ final class FirstViewController: UIViewController {
     }
 }
 
+// MARK: - UI & Layout
+
 private extension FirstViewController {
     
-    func setBackgroundColor() {
+    func setUI() {
         view.backgroundColor = .white
+        nameTextField.setLeftPaddingPoints(15)
     }
     
     func setLayout() {
@@ -197,6 +204,8 @@ private extension FirstViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension FirstViewController : UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -211,5 +220,4 @@ extension FirstViewController : UITextFieldDelegate {
         textField.resignFirstResponder() // TextField 비활성화
         return true
     }
-    
 }
