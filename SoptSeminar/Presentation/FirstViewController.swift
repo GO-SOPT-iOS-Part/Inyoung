@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 
 final class FirstViewController: UIViewController {
@@ -148,12 +149,13 @@ private extension FirstViewController {
     
     func setUI() {
         view.backgroundColor = .white
+        
         nameTextField.setLeftPaddingPoints(15)
     }
     
     func setLayout() {
-        
         view.addSubviews(containerView)
+        
         containerView.addSubviews(nameLabel, nameTextField, errorLabel, presentButton, pushButton)
         
         containerView.snp.makeConstraints {
@@ -209,7 +211,7 @@ private extension FirstViewController {
 extension FirstViewController : UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let name = textField.text {
+        if let name = nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
             self.name = name
         }
         
