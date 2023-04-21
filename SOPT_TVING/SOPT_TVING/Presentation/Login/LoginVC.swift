@@ -12,6 +12,8 @@ import Then
 
 final class LoginVC: UIViewController {
     
+    // MARK: - Properties
+    
     var name: String = ""
     
     // MARK: - UI Components
@@ -68,6 +70,8 @@ final class LoginVC: UIViewController {
         $0.addTarget(self, action: #selector(makeAccountButtonDidTap), for: .touchUpInside)
     }
     
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,9 +79,7 @@ final class LoginVC: UIViewController {
         setLayout()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+    // MARK: - @objc
     
     @objc
     private func backButtonDidTap() {
@@ -107,7 +109,7 @@ final class LoginVC: UIViewController {
     }
 }
 
-// MARK: - Layout
+// MARK: - UI & Layout
 
 extension LoginVC {
     
@@ -177,9 +179,9 @@ extension LoginVC {
             $0.width.equalTo(127)
         }
     }
-    
 }
 
+// MARK: - Delegate
 extension LoginVC : CreateVCDelegate {
     func updateName(name: String) {
         self.name = name

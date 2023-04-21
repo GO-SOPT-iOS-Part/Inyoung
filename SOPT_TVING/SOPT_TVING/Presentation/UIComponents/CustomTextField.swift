@@ -42,29 +42,26 @@ class CustomTextField: UIView {
     
     private lazy var textField = UITextField().then {
         $0.backgroundColor = .tvingGray4
+        $0.textColor = .tvingGray2
+        $0.delegate = self
     }
     
-    private lazy var removeAllButton: UIButton = {
-        let button = UIButton()
-        button.setImage(ImageLiterals.Icn.close, for: .normal)
-        button.addTarget(self, action: #selector(removeAllButtonDidTap), for: .touchUpInside)
-        return button
-    }()
+    private let stackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 16
+        $0.backgroundColor = .tvingGray4
+        $0.isHidden = true
+    }
     
-    private lazy var secureButton: UIButton = {
-        let button = UIButton()
-        button.setImage(ImageLiterals.Icn.eyeClose, for: .normal)
-        button.addTarget(self, action: #selector(secureButtonDidTap), for: .touchUpInside)
-        return button
-    }()
+    private lazy var removeAllButton = UIButton().then {
+        $0.setImage(ImageLiterals.Icn.close, for: .normal)
+        $0.addTarget(self, action: #selector(removeAllButtonDidTap), for: .touchUpInside)
+    }
     
-    private let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 16
-        stackView.backgroundColor = .tvingGray4
-        return stackView
-    }()
+    private lazy var secureButton = UIButton().then {
+        $0.setImage(ImageLiterals.Icn.eyeClose, for: .normal)
+        $0.addTarget(self, action: #selector(secureButtonDidTap), for: .touchUpInside)
+    }
     
     // MARK: - Life Cycle
     
@@ -130,6 +127,20 @@ extension CustomTextField {
         textField.attributedPlaceholder = placeholder
     }
     
+    private func showButtonWhenEditingTextField() {
+        stackView.isHidden = false
+        textField.layer.borderColor = UIColor.tvingGray2.cgColor
+        textField.layer.borderWidth = 1.0
+        setPlaceholder()
+    }
+    
+    private func hideButtonWhenEditingTextField() {
+        stackView.isHidden = true
+        textField.backgroundColor = .tvingGray4
+        textField.layer.borderColor = UIColor.clear.cgColor
+        textField.placeholder = nil
+    }
+    
     private func setLayout(type: CustomTextFieldType) {
         
         self.addSubviews(textField, stackView)
@@ -164,5 +175,16 @@ extension CustomTextField {
         secureButton.snp.makeConstraints {
             $0.width.height.equalTo(20)
         }
+    }
+}
+
+extension CustomTextField : UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        showButtonWhenEditingTextField()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        hideButtonWhenEditingTextField()
     }
 }

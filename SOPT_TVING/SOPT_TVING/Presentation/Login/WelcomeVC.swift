@@ -12,7 +12,7 @@ import Then
 
 final class WelcomeVC: UIViewController {
     
-    // MARK: - properties
+    // MARK: - UI Components
     
     private let logoImage = UIImageView(image: ImageLiterals.Logo.logoImage)
     
