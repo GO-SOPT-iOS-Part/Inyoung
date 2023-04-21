@@ -105,6 +105,7 @@ final class LoginVC: UIViewController {
             sheet.prefersGrabberVisible = true
         }
         modal.delegate = self
+        modal.dataBind(self.name)
         self.present(modal, animated: true)
     }
 }

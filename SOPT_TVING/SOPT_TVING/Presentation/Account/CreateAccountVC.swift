@@ -18,13 +18,13 @@ final class CreateAccountVC: UIViewController {
     
     weak var delegate: CreateVCDelegate?
     
-    private let setUsernameLabel = UILabel().then {
+    private let nameLabel = UILabel().then {
         $0.text = "닉네임을 입력해주세요"
         $0.font = .Font(.medium, size: 23)
         $0.textColor = .tvingBlack
     }
     
-    private let usernameTextField = UITextField().then {
+    private let nameTextfield = UITextField().then {
         $0.textColor = .tvingBlack
         $0.attributedPlaceholder = NSAttributedString(string: "닉네임?",
                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.tvingBlack])
@@ -51,9 +51,15 @@ final class CreateAccountVC: UIViewController {
     
     @objc
     private func saveButtonDidTap() {
-        if let name = usernameTextField.text {
+        if let name = nameTextfield.text {
             delegate?.updateName(name: name)
             self.dismiss(animated: true)
+        }
+    }
+    
+    func dataBind(_ name: String) {
+        if name != "" {
+            nameTextfield.text = name
         }
     }
     
@@ -66,15 +72,15 @@ extension CreateAccountVC {
     
     private func setLayout() {
         
-        view.addSubviews(setUsernameLabel, usernameTextField, saveButton)
+        view.addSubviews(nameLabel, nameTextfield, saveButton)
         
-        setUsernameLabel.snp.makeConstraints {
+        nameLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(40)
             $0.centerX.equalToSuperview()
         }
         
-        usernameTextField.snp.makeConstraints {
-            $0.top.equalTo(setUsernameLabel.snp.bottom).offset(30)
+        nameTextfield.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }

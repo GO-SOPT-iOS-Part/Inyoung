@@ -141,6 +141,7 @@ extension CustomTextField {
         textField.placeholder = nil
     }
     
+    
     private func setLayout(type: CustomTextFieldType) {
         
         self.addSubviews(textField, stackView)
@@ -171,15 +172,17 @@ extension CustomTextField {
         removeAllButton.snp.makeConstraints {
             $0.width.height.equalTo(20)
         }
-
+        
         secureButton.snp.makeConstraints {
             $0.width.height.equalTo(20)
         }
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension CustomTextField : UITextFieldDelegate {
-    
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         showButtonWhenEditingTextField()
     }
