@@ -10,12 +10,21 @@ import UIKit
 import SnapKit
 import Then
 
-enum CustomTextFieldType : CaseIterable {
-    case email
-    case password
-}
-
-class CustomTextField: UIView, UITextFieldDelegate {
+class CustomTextField: UIView {
+    
+    enum CustomTextFieldType : CaseIterable {
+        case email
+        case password
+        
+        var placeholder: String {
+            switch self {
+            case .email:
+                return "아이디"
+            case .password:
+                return "비밀번호"
+            }
+        }
+    }
     
     var isSecured: Bool = true {
         didSet {
@@ -26,6 +35,8 @@ class CustomTextField: UIView, UITextFieldDelegate {
             }
         }
     }
+    
+    let textFieldType: CustomTextFieldType
     
     // MARK: - UI Components
     
@@ -58,6 +69,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
     // MARK: - Life Cycle
     
     init(type: CustomTextFieldType) {
+        self.textFieldType = type
         super.init(frame: .zero)
         setLayout(type: type)
         setUI(type: type)
@@ -90,18 +102,26 @@ class CustomTextField: UIView, UITextFieldDelegate {
 extension CustomTextField {
     
     private func setUI(type: CustomTextFieldType) {
+        let placeholderColor = NSAttributedString.Key.foregroundColor
         switch type {
         case .email:
-            textField.attributedPlaceholder = NSAttributedString(string: "아이디",
-                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.tvingGray2])
             textField.isSecureTextEntry = false
         case .password:
-            textField.attributedPlaceholder = NSAttributedString(string: "비밀번호",
-                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.tvingGray2])
             textField.isSecureTextEntry = true
         }
         
         self.textField.setLeftPaddingPoints(15)
+    }
+    
+    private func setPlaceholder() {
+        let placeholder = NSAttributedString(
+            string: textFieldType.placeholder,
+            attributes: [
+                .foregroundColor: UIColor.tvingGray2,
+                .font: UIFont.Font(.regular, size: 15)
+            ]
+        )
+        textField.attributedPlaceholder = placeholder
     }
     
     private func setLayout(type: CustomTextFieldType) {
