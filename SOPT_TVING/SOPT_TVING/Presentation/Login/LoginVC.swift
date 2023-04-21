@@ -63,6 +63,7 @@ final class LoginVC: UIViewController {
                 .foregroundColor: UIColor.tvingGray2
             ])
         $0.setAttributedTitle(attributedText, for: .normal)
+        $0.addTarget(self, action: #selector(makeAccountButtonDidTap), for: .touchUpInside)
     }
     
     override func viewDidLoad() {
@@ -80,6 +81,16 @@ final class LoginVC: UIViewController {
     @objc
     private func loginButtonDidTap() {
         print(00)
+    }
+    
+    @objc
+    private func makeAccountButtonDidTap() {
+        let modal = CreateAccountVC()
+        if let sheet = modal.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
+        }
+        self.present(modal, animated: true)
     }
 }
 

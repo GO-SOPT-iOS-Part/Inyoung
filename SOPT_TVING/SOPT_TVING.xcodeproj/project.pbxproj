@@ -30,6 +30,7 @@
 		14E07DB129EAC9BE0080FECA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E07DB029EAC9BE0080FECA /* CustomTextField.swift */; };
 		14E07DB329EE55440080FECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14489BCB29E941B000DB46AC /* Assets.xcassets */; };
 		14E07DB529F2C5BB0080FECA /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E07DB429F2C5BB0080FECA /* UITextField+.swift */; };
+		14E07DB829F2D5680080FECA /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E07DB729F2D5680080FECA /* CreateAccountVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		14E07DA429E96FF90080FECA /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		14E07DB029EAC9BE0080FECA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		14E07DB429F2C5BB0080FECA /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		14E07DB729F2D5680080FECA /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		14489BD729E9422D00DB46AC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				14E07DB629F2D5350080FECA /* Account */,
 				14E07DAF29EAC9610080FECA /* Login */,
 				14E07DAE29EAC9470080FECA /* UIComponents */,
 			);
@@ -186,6 +189,14 @@
 				14489BC629E941AE00DB46AC /* LoginVC.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		14E07DB629F2D5350080FECA /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				14E07DB729F2D5680080FECA /* CreateAccountVC.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +295,7 @@
 				14489BC329E941AE00DB46AC /* AppDelegate.swift in Sources */,
 				14E07DB529F2C5BB0080FECA /* UITextField+.swift in Sources */,
 				14489BE029E9451E00DB46AC /* ColorLiterals.swift in Sources */,
+				14E07DB829F2D5680080FECA /* CreateAccountVC.swift in Sources */,
 				14489BC529E941AE00DB46AC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
