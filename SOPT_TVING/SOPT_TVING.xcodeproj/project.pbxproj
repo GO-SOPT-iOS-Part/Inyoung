@@ -11,7 +11,6 @@
 		14489BC529E941AE00DB46AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC429E941AE00DB46AC /* SceneDelegate.swift */; };
 		14489BC729E941AE00DB46AC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC629E941AE00DB46AC /* LoginVC.swift */; };
 		14489BCA29E941AE00DB46AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14489BC829E941AE00DB46AC /* Main.storyboard */; };
-		14489BCC29E941B000DB46AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14489BCB29E941B000DB46AC /* Assets.xcassets */; };
 		14489BCF29E941B000DB46AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14489BCD29E941B000DB46AC /* LaunchScreen.storyboard */; };
 		14489BDC29E942A000DB46AC /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BDB29E942A000DB46AC /* UIView+.swift */; };
 		14489BE029E9451E00DB46AC /* ColorLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BDF29E9451E00DB46AC /* ColorLiterals.swift */; };
@@ -28,6 +27,9 @@
 		14E07DAB29E96FF90080FECA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14E07DA229E96FF90080FECA /* Pretendard-Bold.otf */; };
 		14E07DAC29E96FF90080FECA /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14E07DA329E96FF90080FECA /* Pretendard-Thin.otf */; };
 		14E07DAD29E96FF90080FECA /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14E07DA429E96FF90080FECA /* Pretendard-Regular.otf */; };
+		14E07DB129EAC9BE0080FECA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E07DB029EAC9BE0080FECA /* CustomTextField.swift */; };
+		14E07DB329EE55440080FECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14489BCB29E941B000DB46AC /* Assets.xcassets */; };
+		14E07DB529F2C5BB0080FECA /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E07DB429F2C5BB0080FECA /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		14E07DA229E96FF90080FECA /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		14E07DA329E96FF90080FECA /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		14E07DA429E96FF90080FECA /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		14E07DB029EAC9BE0080FECA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		14E07DB429F2C5BB0080FECA /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +101,8 @@
 		14489BD729E9422D00DB46AC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				14489BC629E941AE00DB46AC /* LoginVC.swift */,
+				14E07DAF29EAC9610080FECA /* Login */,
+				14E07DAE29EAC9470080FECA /* UIComponents */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				14489BDB29E942A000DB46AC /* UIView+.swift */,
+				14E07DB429F2C5BB0080FECA /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -164,6 +170,22 @@
 				14E07DA329E96FF90080FECA /* Pretendard-Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		14E07DAE29EAC9470080FECA /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				14E07DB029EAC9BE0080FECA /* CustomTextField.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		14E07DAF29EAC9610080FECA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				14489BC629E941AE00DB46AC /* LoginVC.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,12 +259,12 @@
 				14E07DAB29E96FF90080FECA /* Pretendard-Bold.otf in Resources */,
 				14489BCF29E941B000DB46AC /* LaunchScreen.storyboard in Resources */,
 				14E07DAA29E96FF90080FECA /* Pretendard-ExtraBold.otf in Resources */,
-				14489BCC29E941B000DB46AC /* Assets.xcassets in Resources */,
 				14E07DA929E96FF90080FECA /* Pretendard-Medium.otf in Resources */,
 				14489BCA29E941AE00DB46AC /* Main.storyboard in Resources */,
 				14E07DA629E96FF90080FECA /* Pretendard-Light.otf in Resources */,
 				14E07DA729E96FF90080FECA /* Pretendard-Black.otf in Resources */,
 				14E07DAC29E96FF90080FECA /* Pretendard-Thin.otf in Resources */,
+				14E07DB329EE55440080FECA /* Assets.xcassets in Resources */,
 				14E07DA529E96FF90080FECA /* Pretendard-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +280,9 @@
 				14489BDC29E942A000DB46AC /* UIView+.swift in Sources */,
 				14489BE229E9533F00DB46AC /* ImageLiterals.swift in Sources */,
 				14489BC729E941AE00DB46AC /* LoginVC.swift in Sources */,
+				14E07DB129EAC9BE0080FECA /* CustomTextField.swift in Sources */,
 				14489BC329E941AE00DB46AC /* AppDelegate.swift in Sources */,
+				14E07DB529F2C5BB0080FECA /* UITextField+.swift in Sources */,
 				14489BE029E9451E00DB46AC /* ColorLiterals.swift in Sources */,
 				14489BC529E941AE00DB46AC /* SceneDelegate.swift in Sources */,
 			);
