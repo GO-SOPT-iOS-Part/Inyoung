@@ -7,7 +7,16 @@
 
 import UIKit
 
-class CreateAccountVC: UIViewController {
+import SnapKit
+import Then
+
+protocol CreateVCDelegate: AnyObject {
+    func updateName(name: String)
+}
+
+final class CreateAccountVC: UIViewController {
+    
+    weak var delegate: CreateVCDelegate?
     
     private let setUsernameLabel = UILabel().then {
         $0.text = "닉네임을 입력해주세요"
@@ -42,7 +51,10 @@ class CreateAccountVC: UIViewController {
     
     @objc
     private func saveButtonDidTap() {
-        self.dismiss(animated: true)
+        if let name = usernameTextField.text {
+            delegate?.updateName(name: name)
+            self.dismiss(animated: true)
+        }
     }
     
 }
@@ -51,7 +63,6 @@ extension CreateAccountVC {
     private func setUI() {
         view.backgroundColor = .tvingWhite
     }
-    
     
     private func setLayout() {
         

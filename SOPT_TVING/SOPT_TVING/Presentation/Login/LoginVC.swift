@@ -12,6 +12,8 @@ import Then
 
 final class LoginVC: UIViewController {
     
+    var name: String = ""
+    
     // MARK: - UI Components
     
     private lazy var backButton = UIButton().then {
@@ -73,6 +75,10 @@ final class LoginVC: UIViewController {
         setLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     @objc
     private func backButtonDidTap() {
         print("back")
@@ -80,7 +86,13 @@ final class LoginVC: UIViewController {
     
     @objc
     private func loginButtonDidTap() {
-        print(00)
+        let welcomeVC = WelcomeVC()
+        if name == "" {
+            welcomeVC.dataBind(emailTextField.getText())
+        } else {
+            welcomeVC.dataBind(name)
+        }
+        self.navigationController?.pushViewController(welcomeVC, animated: true)
     }
     
     @objc
@@ -90,6 +102,7 @@ final class LoginVC: UIViewController {
             sheet.detents = [.medium()]
             sheet.prefersGrabberVisible = true
         }
+        modal.delegate = self
         self.present(modal, animated: true)
     }
 }
@@ -167,3 +180,8 @@ extension LoginVC {
     
 }
 
+extension LoginVC : CreateVCDelegate {
+    func updateName(name: String) {
+        self.name = name
+    }
+}

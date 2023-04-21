@@ -97,12 +97,18 @@ class CustomTextField: UIView {
     private func unsecuredLayout() {
         secureButton.setImage(ImageLiterals.Icn.eyeOpen, for: .normal)
     }
+    
+    func getText() -> String {
+        if let text = textField.text {
+            return text
+        }
+        return ""
+    }
 }
 
 extension CustomTextField {
     
     private func setUI(type: CustomTextFieldType) {
-        let placeholderColor = NSAttributedString.Key.foregroundColor
         switch type {
         case .email:
             textField.isSecureTextEntry = false
@@ -114,7 +120,7 @@ extension CustomTextField {
     }
     
     private func setPlaceholder() {
-        let placeholder = NSAttributedString(
+        let placeholder = NSAttributedString (
             string: textFieldType.placeholder,
             attributes: [
                 .foregroundColor: UIColor.tvingGray2,
