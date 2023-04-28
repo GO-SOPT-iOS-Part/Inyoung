@@ -10,7 +10,13 @@ import UIKit
 import SnapKit
 import Then
 
+protocol TextFieldDelegate: AnyObject {
+    func checkIsValid(_ customField: CustomTextField, text: String?)
+}
+
 class CustomTextField: UIView {
+    
+    weak var delegate: TextFieldDelegate?
     
     enum CustomTextFieldType : CaseIterable {
         case email
@@ -44,6 +50,7 @@ class CustomTextField: UIView {
         $0.backgroundColor = .tvingGray4
         $0.textColor = .tvingGray2
         $0.delegate = self
+        $0.addTarget(self, action: #selector(textFieldDidBeginEditing), for: .editingChanged)
     }
     
     private let stackView = UIStackView().then {
@@ -79,6 +86,7 @@ class CustomTextField: UIView {
     @objc
     private func removeAllButtonDidTap() {
         textField.text?.removeAll()
+        delegate?.checkIsValid(self, text: textField.text)
     }
     
     @objc
@@ -100,6 +108,15 @@ class CustomTextField: UIView {
             return text
         }
         return ""
+    }
+    
+    func checkisValid() -> Bool {
+        guard let text = textField.text else { return false }
+        if !text.isEmpty {
+            return true
+        } else {
+            return false
+        }
     }
 }
 
@@ -185,6 +202,7 @@ extension CustomTextField : UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         showButtonWhenEditingTextField()
+        delegate?.checkIsValid(self, text: textField.text)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {

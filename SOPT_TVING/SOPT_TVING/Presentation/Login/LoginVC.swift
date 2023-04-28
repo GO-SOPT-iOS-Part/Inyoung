@@ -35,7 +35,7 @@ final class LoginVC: UIViewController {
     private lazy var loginButton = UIButton().then {
         $0.setTitle("로그인하기", for: .normal)
         $0.setTitleColor(UIColor.tvingWhite, for: .normal)
-        $0.backgroundColor = .tvingRed
+        $0.backgroundColor = .tvingGray2
         $0.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
     }
     
@@ -77,6 +77,12 @@ final class LoginVC: UIViewController {
         
         setUI()
         setLayout()
+        setDelegate()
+    }
+    
+    private func setDelegate() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     // MARK: - @objc
@@ -183,7 +189,20 @@ extension LoginVC {
 }
 
 // MARK: - Delegate
-extension LoginVC : CreateVCDelegate {
+
+extension LoginVC : CreateVCDelegate, TextFieldDelegate {
+    
+    func checkIsValid(_ customField: CustomTextField, text: String?) {
+        
+        if emailTextField.checkisValid() && passwordTextField.checkisValid() {
+            loginButton.backgroundColor = .tvingRed
+            loginButton.isEnabled = true
+        } else {
+            loginButton.backgroundColor = .tvingGray2
+            loginButton.isEnabled = false
+        }
+    }
+    
     func updateName(name: String) {
         self.name = name
     }
