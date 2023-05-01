@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TabBarViewController: UITabBarController {
+final class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,5 +68,5 @@ final class TabBarViewController: UITabBarController {
     }
 }
 
-extension TabBarViewController: UIGestureRecognizerDelegate { }
+extension TabBarController: UIGestureRecognizerDelegate { }
 
