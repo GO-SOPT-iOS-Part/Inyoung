@@ -23,6 +23,7 @@ struct ImageLiterals {
         static let setting = UIImage(named: "icon_setting")
         static let cash = UIImage(named: "icon_cash")
         static let ticket = UIImage(named: "icon_ticket")
+        static let moreInfo = UIImage(named: "icon_moreInfo")
     }
     
     struct TabBar {
