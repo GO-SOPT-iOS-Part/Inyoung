@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1444F4BD29FC2A57006632B4 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4BC29FC2A57006632B4 /* UIViewController+.swift */; };
-		1444F4C029FED569006632B4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4BF29FED569006632B4 /* TabBarViewController.swift */; };
+		1444F4C029FED569006632B4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4BF29FED569006632B4 /* TabBarController.swift */; };
 		1444F4C329FED6B2006632B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4C229FED6B2006632B4 /* HomeViewController.swift */; };
 		1444F4C629FED7A5006632B4 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4C529FED7A5006632B4 /* UpcomingViewController.swift */; };
 		1444F4C929FED7B8006632B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4C829FED7B8006632B4 /* SearchViewController.swift */; };
@@ -47,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		1444F4BC29FC2A57006632B4 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		1444F4BF29FED569006632B4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		1444F4BF29FED569006632B4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1444F4C229FED6B2006632B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1444F4C529FED7A5006632B4 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		1444F4C829FED7B8006632B4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		1444F4BE29FC2A82006632B4 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				1444F4BF29FED569006632B4 /* TabBarViewController.swift */,
+				1444F4BF29FED569006632B4 /* TabBarController.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -389,7 +389,7 @@
 			files = (
 				14489BF429E95ABA00DB46AC /* FontLiterals.swift in Sources */,
 				14489BDC29E942A000DB46AC /* UIView+.swift in Sources */,
-				1444F4C029FED569006632B4 /* TabBarViewController.swift in Sources */,
+				1444F4C029FED569006632B4 /* TabBarController.swift in Sources */,
 				1444F4CC29FED7CD006632B4 /* RecordViewController.swift in Sources */,
 				1444F4C929FED7B8006632B4 /* SearchViewController.swift in Sources */,
 				14489BE229E9533F00DB46AC /* ImageLiterals.swift in Sources */,

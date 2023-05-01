@@ -19,6 +19,10 @@ struct ImageLiterals {
         static let close = UIImage(named: "icn_close")
         static let eyeClose = UIImage(named: "icn_eyeClose")
         static let eyeOpen = UIImage(named: "icn_eyeOpen")
+        static let alarm = UIImage(named: "icon_alarm")
+        static let setting = UIImage(named: "icon_setting")
+        static let cash = UIImage(named: "icon_cash")
+        static let ticket = UIImage(named: "icon_ticket")
     }
     
     struct TabBar {
