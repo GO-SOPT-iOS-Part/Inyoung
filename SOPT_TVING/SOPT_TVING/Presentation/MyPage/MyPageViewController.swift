@@ -73,13 +73,13 @@ extension MyPageViewController {
         settingButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(18)
-            $0.size.equalTo(28)
+            $0.size.equalTo(30)
         }
         
         alarmButton.snp.makeConstraints {
             $0.centerY.equalTo(settingButton)
             $0.trailing.equalTo(settingButton.snp.leading).offset(-9)
-            $0.size.equalTo(28)
+            $0.size.equalTo(30)
         }
         
         tableView.snp.makeConstraints {
