@@ -48,7 +48,7 @@ final class WelcomeVC: UIViewController {
     
     @objc
     private func mainButtonDidTap() {
-        print(00)
+        self.switchRootViewController(rootViewController: TabBarViewController(), animated: true, completion: nil)
     }
     
 }

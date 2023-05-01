@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1444F4BD29FC2A57006632B4 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4BC29FC2A57006632B4 /* UIViewController+.swift */; };
+		1444F4C029FED569006632B4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4BF29FED569006632B4 /* TabBarViewController.swift */; };
+		1444F4C329FED6B2006632B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4C229FED6B2006632B4 /* HomeViewController.swift */; };
+		1444F4C629FED7A5006632B4 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4C529FED7A5006632B4 /* UpcomingViewController.swift */; };
+		1444F4C929FED7B8006632B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4C829FED7B8006632B4 /* SearchViewController.swift */; };
+		1444F4CC29FED7CD006632B4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4CB29FED7CD006632B4 /* RecordViewController.swift */; };
 		14489BC329E941AE00DB46AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC229E941AE00DB46AC /* AppDelegate.swift */; };
 		14489BC529E941AE00DB46AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC429E941AE00DB46AC /* SceneDelegate.swift */; };
 		14489BC729E941AE00DB46AC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC629E941AE00DB46AC /* LoginVC.swift */; };
@@ -36,6 +42,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1444F4BC29FC2A57006632B4 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		1444F4BF29FED569006632B4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		1444F4C229FED6B2006632B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1444F4C529FED7A5006632B4 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
+		1444F4C829FED7B8006632B4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		1444F4CB29FED7CD006632B4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		14489BBF29E941AE00DB46AC /* SOPT_TVING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT_TVING.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14489BC229E941AE00DB46AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14489BC429E941AE00DB46AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +89,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1444F4BE29FC2A82006632B4 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				1444F4BF29FED569006632B4 /* TabBarViewController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		1444F4C129FED687006632B4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1444F4C229FED6B2006632B4 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1444F4C429FED767006632B4 /* Upcoming */ = {
+			isa = PBXGroup;
+			children = (
+				1444F4C529FED7A5006632B4 /* UpcomingViewController.swift */,
+			);
+			path = Upcoming;
+			sourceTree = "<group>";
+		};
+		1444F4C729FED7AB006632B4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1444F4C829FED7B8006632B4 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1444F4CA29FED7C1006632B4 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				1444F4CB29FED7CD006632B4 /* RecordViewController.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
 		14489BB629E941AE00DB46AC = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +159,11 @@
 		14489BD729E9422D00DB46AC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				1444F4CA29FED7C1006632B4 /* Record */,
+				1444F4C729FED7AB006632B4 /* Search */,
+				1444F4C429FED767006632B4 /* Upcoming */,
+				1444F4C129FED687006632B4 /* Home */,
+				1444F4BE29FC2A82006632B4 /* Tabbar */,
 				14E07DB629F2D5350080FECA /* Account */,
 				14E07DAF29EAC9610080FECA /* Login */,
 				14E07DAE29EAC9470080FECA /* UIComponents */,
@@ -141,6 +198,7 @@
 				14489BDB29E942A000DB46AC /* UIView+.swift */,
 				14E07DB429F2C5BB0080FECA /* UITextField+.swift */,
 				14E07DBB29F32A620080FECA /* String+.swift */,
+				1444F4BC29FC2A57006632B4 /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -295,13 +353,19 @@
 			files = (
 				14489BF429E95ABA00DB46AC /* FontLiterals.swift in Sources */,
 				14489BDC29E942A000DB46AC /* UIView+.swift in Sources */,
+				1444F4C029FED569006632B4 /* TabBarViewController.swift in Sources */,
+				1444F4CC29FED7CD006632B4 /* RecordViewController.swift in Sources */,
+				1444F4C929FED7B8006632B4 /* SearchViewController.swift in Sources */,
 				14489BE229E9533F00DB46AC /* ImageLiterals.swift in Sources */,
 				14489BC729E941AE00DB46AC /* LoginVC.swift in Sources */,
+				1444F4C329FED6B2006632B4 /* HomeViewController.swift in Sources */,
 				14E07DB129EAC9BE0080FECA /* CustomTextField.swift in Sources */,
 				14489BC329E941AE00DB46AC /* AppDelegate.swift in Sources */,
+				1444F4C629FED7A5006632B4 /* UpcomingViewController.swift in Sources */,
 				14E07DB529F2C5BB0080FECA /* UITextField+.swift in Sources */,
 				14489BE029E9451E00DB46AC /* ColorLiterals.swift in Sources */,
 				14E07DB829F2D5680080FECA /* CreateAccountVC.swift in Sources */,
+				1444F4BD29FC2A57006632B4 /* UIViewController+.swift in Sources */,
 				14E07DBA29F2DC220080FECA /* WelcomeVC.swift in Sources */,
 				14E07DBC29F32A620080FECA /* String+.swift in Sources */,
 				14489BC529E941AE00DB46AC /* SceneDelegate.swift in Sources */,
