@@ -48,13 +48,13 @@ final class TabBarController: UITabBarController {
         nav.tabBarItem.selectedImage = selectedImage
         nav.tabBarItem.title = title
         
-        nav.navigationBar.tintColor = .black
-        nav.navigationBar.backgroundColor = .white
+        nav.navigationBar.tintColor = .tvingBlack
+        nav.navigationBar.backgroundColor = .tvingBlack
         nav.isNavigationBarHidden = true
         nav.navigationBar.isHidden = true
         nav.tabBarItem.setTitleTextAttributes([.font: UIFont.Font(.regular, size: 13)], for: .normal)
         nav.navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: self, action: nil)
-        nav.navigationItem.backBarButtonItem?.tintColor = .black
+        nav.navigationItem.backBarButtonItem?.tintColor = .tvingBlack
         
         nav.interactivePopGestureRecognizer?.isEnabled = true
         nav.interactivePopGestureRecognizer?.delegate = self
@@ -65,6 +65,7 @@ final class TabBarController: UITabBarController {
         tabBar.backgroundColor = .tvingBlack
         tabBar.tintColor = .tvingWhite
         tabBar.unselectedItemTintColor = .tvingGray3
+        tabBar.backgroundImage = UIImage()
     }
 }
 

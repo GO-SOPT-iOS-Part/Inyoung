@@ -17,6 +17,10 @@
 		1444F4D029FFC3A3006632B4 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4CF29FFC3A3006632B4 /* HomeTableViewCell.swift */; };
 		1444F4D429FFC746006632B4 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4D329FFC746006632B4 /* HomeHeaderView.swift */; };
 		1444F4D729FFDD46006632B4 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4D629FFDD46006632B4 /* MyPageViewController.swift */; };
+		1444F4D92A001B9C006632B4 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4D82A001B9C006632B4 /* MyPageTableViewCell.swift */; };
+		1444F4DB2A002042006632B4 /* MyPageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4DA2A002042006632B4 /* MyPageHeaderView.swift */; };
+		1444F4DD2A0030F1006632B4 /* MyPageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4DC2A0030F1006632B4 /* MyPageFooterView.swift */; };
+		1444F4DF2A0045A6006632B4 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4DE2A0045A6006632B4 /* StringLiterals.swift */; };
 		14489BC329E941AE00DB46AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC229E941AE00DB46AC /* AppDelegate.swift */; };
 		14489BC529E941AE00DB46AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC429E941AE00DB46AC /* SceneDelegate.swift */; };
 		14489BC729E941AE00DB46AC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC629E941AE00DB46AC /* LoginVC.swift */; };
@@ -56,6 +60,10 @@
 		1444F4CF29FFC3A3006632B4 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		1444F4D329FFC746006632B4 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		1444F4D629FFDD46006632B4 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		1444F4D82A001B9C006632B4 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
+		1444F4DA2A002042006632B4 /* MyPageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHeaderView.swift; sourceTree = "<group>"; };
+		1444F4DC2A0030F1006632B4 /* MyPageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFooterView.swift; sourceTree = "<group>"; };
+		1444F4DE2A0045A6006632B4 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		14489BBF29E941AE00DB46AC /* SOPT_TVING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT_TVING.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14489BC229E941AE00DB46AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14489BC429E941AE00DB46AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				1444F4D629FFDD46006632B4 /* MyPageViewController.swift */,
+				1444F4D82A001B9C006632B4 /* MyPageTableViewCell.swift */,
+				1444F4DA2A002042006632B4 /* MyPageHeaderView.swift */,
+				1444F4DC2A0030F1006632B4 /* MyPageFooterView.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -254,6 +265,7 @@
 				14489BDF29E9451E00DB46AC /* ColorLiterals.swift */,
 				14489BE129E9533F00DB46AC /* ImageLiterals.swift */,
 				14489BF329E95ABA00DB46AC /* FontLiterals.swift */,
+				1444F4DE2A0045A6006632B4 /* StringLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -387,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1444F4DB2A002042006632B4 /* MyPageHeaderView.swift in Sources */,
 				14489BF429E95ABA00DB46AC /* FontLiterals.swift in Sources */,
 				14489BDC29E942A000DB46AC /* UIView+.swift in Sources */,
 				1444F4C029FED569006632B4 /* TabBarController.swift in Sources */,
@@ -401,13 +414,16 @@
 				1444F4C629FED7A5006632B4 /* UpcomingViewController.swift in Sources */,
 				1444F4D429FFC746006632B4 /* HomeHeaderView.swift in Sources */,
 				14E07DB529F2C5BB0080FECA /* UITextField+.swift in Sources */,
+				1444F4D92A001B9C006632B4 /* MyPageTableViewCell.swift in Sources */,
 				14489BE029E9451E00DB46AC /* ColorLiterals.swift in Sources */,
 				1444F4CE29FFC156006632B4 /* NSObject+.swift in Sources */,
 				14E07DB829F2D5680080FECA /* CreateAccountVC.swift in Sources */,
+				1444F4DD2A0030F1006632B4 /* MyPageFooterView.swift in Sources */,
 				1444F4D729FFDD46006632B4 /* MyPageViewController.swift in Sources */,
 				1444F4BD29FC2A57006632B4 /* UIViewController+.swift in Sources */,
 				14E07DBA29F2DC220080FECA /* WelcomeVC.swift in Sources */,
 				14E07DBC29F32A620080FECA /* String+.swift in Sources */,
+				1444F4DF2A0045A6006632B4 /* StringLiterals.swift in Sources */,
 				14489BC529E941AE00DB46AC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

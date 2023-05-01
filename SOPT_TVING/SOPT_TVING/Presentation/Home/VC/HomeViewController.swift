@@ -78,7 +78,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: HomeHeaderView.className) as? HomeHeaderView else { return nil }
         view.profileButtonTappedClosure = {[weak self] in
             let myPageVC = MyPageViewController()
-            myPageVC.hidesBottomBarWhenPushed = true
             self?.navigationController?.pushViewController(myPageVC, animated: true)
         }
         return view
