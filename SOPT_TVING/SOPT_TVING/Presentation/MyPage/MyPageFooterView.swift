@@ -41,8 +41,8 @@ extension MyPageFooterView {
         let separateView = UIView().then {
             $0.backgroundColor = .tvingGray4
         }
-        
-        contentView.addSubview(separateView)
+      
+        addSubview(separateView)
         separateView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(8)
@@ -61,7 +61,7 @@ extension MyPageFooterView {
             $0.layer.borderWidth = 1
         }
         
-        contentView.addSubview(logoutButton)
+        addSubview(logoutButton)
         logoutButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(23)
             $0.leading.trailing.equalToSuperview().inset(8)
