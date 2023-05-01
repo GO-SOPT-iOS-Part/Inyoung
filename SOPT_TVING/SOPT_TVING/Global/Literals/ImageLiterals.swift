@@ -11,6 +11,7 @@ struct ImageLiterals {
     
     struct Logo {
         static let logoImage = UIImage(named: "tving_logo")
+        static let logoImageWhite = UIImage(named: "tving_logo_white")
     }
     
     struct Icn {
@@ -28,5 +29,9 @@ struct ImageLiterals {
         static let search = UIImage(systemName: "magnifyingglass")
         static let record = UIImage(systemName: "clock.badge.checkmark")
         static let recrodSelected = UIImage(systemName: "clock.badge.checkmark.fill")
+    }
+    
+    struct Sample {
+        static let profileImage = UIImage(named: "profileImage1")
     }
 }
