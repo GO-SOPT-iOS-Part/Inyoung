@@ -23,7 +23,7 @@ struct StringLiterals {
                                       informationAgreement]
     }
     
-    struct AppSetting{
+    struct AppSetting {
         static let notice = "공지사항"
         static let event = "이벤트"
         static let supportCenter = "고객센터"
@@ -33,6 +33,12 @@ struct StringLiterals {
                                       event,
                                       supportCenter,
                                       explore]
+    }
+    
+    struct MyProfile {
+        static let switchProfile = "프로필 전환"
+        static let myTicket = "나의 이용권"
+        static let myCash = "티빙캐시"
     }
 }
 
