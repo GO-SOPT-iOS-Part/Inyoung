@@ -36,4 +36,8 @@ extension UIColor {
     @nonobjc class var tvingGray4: UIColor {
         return UIColor(red: 0.18, green: 0.18, blue: 0.18, alpha: 1)
     }
+    
+    @nonobjc class var tvingGray5: UIColor {
+        return UIColor(red: 0.098, green: 0.098, blue: 0.098, alpha: 1)
+    }
 }
