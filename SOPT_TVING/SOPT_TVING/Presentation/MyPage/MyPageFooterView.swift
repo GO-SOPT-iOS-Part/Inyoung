@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MyPageFooterView: UITableViewHeaderFooterView {
+final class MyPageFooterView: UITableViewHeaderFooterView {
     
     enum FooterType : CaseIterable {
         case separate

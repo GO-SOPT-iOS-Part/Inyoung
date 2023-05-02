@@ -12,6 +12,8 @@ struct ImageLiterals {
     struct Logo {
         static let logoImage = UIImage(named: "tving_logo")
         static let logoImageWhite = UIImage(named: "tving_logo_white")
+        static let logoTVN = UIImage(named: "tvn_logo")
+        static let logoJTBC = UIImage(named: "jtbc_logo")
     }
     
     struct Icn {
