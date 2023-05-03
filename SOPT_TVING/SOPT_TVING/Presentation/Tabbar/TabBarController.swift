@@ -21,7 +21,7 @@ final class TabBarController: UITabBarController {
             
             unselectedImage: ImageLiterals.TabBar.home,
             selectedImage: ImageLiterals.TabBar.homeSelected,
-            rootViewController: HomeViewController(), title: "홈")
+            rootViewController: MainViewController(), title: "홈")
         
         let upcomingVC = makeNavigationController(
             unselectedImage: ImageLiterals.TabBar.upcoming,

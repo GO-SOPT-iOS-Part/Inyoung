@@ -9,18 +9,23 @@
 /* Begin PBXBuildFile section */
 		1444F4BD29FC2A57006632B4 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4BC29FC2A57006632B4 /* UIViewController+.swift */; };
 		1444F4C029FED569006632B4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4BF29FED569006632B4 /* TabBarController.swift */; };
-		1444F4C329FED6B2006632B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4C229FED6B2006632B4 /* HomeViewController.swift */; };
+		1444F4C329FED6B2006632B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4C229FED6B2006632B4 /* MainViewController.swift */; };
 		1444F4C629FED7A5006632B4 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4C529FED7A5006632B4 /* UpcomingViewController.swift */; };
 		1444F4C929FED7B8006632B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4C829FED7B8006632B4 /* SearchViewController.swift */; };
 		1444F4CC29FED7CD006632B4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4CB29FED7CD006632B4 /* RecordViewController.swift */; };
 		1444F4CE29FFC156006632B4 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4CD29FFC156006632B4 /* NSObject+.swift */; };
-		1444F4D029FFC3A3006632B4 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4CF29FFC3A3006632B4 /* HomeTableViewCell.swift */; };
-		1444F4D429FFC746006632B4 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4D329FFC746006632B4 /* HomeHeaderView.swift */; };
 		1444F4D729FFDD46006632B4 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4D629FFDD46006632B4 /* MyPageViewController.swift */; };
 		1444F4D92A001B9C006632B4 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4D82A001B9C006632B4 /* MyPageTableViewCell.swift */; };
 		1444F4DB2A002042006632B4 /* MyPageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4DA2A002042006632B4 /* MyPageHeaderView.swift */; };
 		1444F4DD2A0030F1006632B4 /* MyPageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4DC2A0030F1006632B4 /* MyPageFooterView.swift */; };
 		1444F4DF2A0045A6006632B4 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F4DE2A0045A6006632B4 /* StringLiterals.swift */; };
+		1444F52E2A018E06006632B4 /* NaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F52D2A018E06006632B4 /* NaviView.swift */; };
+		1444F5302A018EDC006632B4 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F52F2A018EDC006632B4 /* MenuCollectionViewCell.swift */; };
+		1444F5322A018FCA006632B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F5312A018FCA006632B4 /* HomeViewController.swift */; };
+		1444F5342A019011006632B4 /* StreamingTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F5332A019011006632B4 /* StreamingTViewController.swift */; };
+		1444F5362A01903A006632B4 /* TVProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F5352A01903A006632B4 /* TVProgramViewController.swift */; };
+		1444F5382A019056006632B4 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F5372A019056006632B4 /* MovieViewController.swift */; };
+		1444F53A2A019069006632B4 /* ParamountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F5392A019069006632B4 /* ParamountViewController.swift */; };
 		14489BC329E941AE00DB46AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC229E941AE00DB46AC /* AppDelegate.swift */; };
 		14489BC529E941AE00DB46AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC429E941AE00DB46AC /* SceneDelegate.swift */; };
 		14489BC729E941AE00DB46AC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14489BC629E941AE00DB46AC /* LoginVC.swift */; };
@@ -52,18 +57,23 @@
 /* Begin PBXFileReference section */
 		1444F4BC29FC2A57006632B4 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		1444F4BF29FED569006632B4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		1444F4C229FED6B2006632B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1444F4C229FED6B2006632B4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1444F4C529FED7A5006632B4 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		1444F4C829FED7B8006632B4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1444F4CB29FED7CD006632B4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		1444F4CD29FFC156006632B4 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
-		1444F4CF29FFC3A3006632B4 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		1444F4D329FFC746006632B4 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		1444F4D629FFDD46006632B4 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		1444F4D82A001B9C006632B4 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
 		1444F4DA2A002042006632B4 /* MyPageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHeaderView.swift; sourceTree = "<group>"; };
 		1444F4DC2A0030F1006632B4 /* MyPageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFooterView.swift; sourceTree = "<group>"; };
 		1444F4DE2A0045A6006632B4 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
+		1444F52D2A018E06006632B4 /* NaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviView.swift; sourceTree = "<group>"; };
+		1444F52F2A018EDC006632B4 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		1444F5312A018FCA006632B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1444F5332A019011006632B4 /* StreamingTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingTViewController.swift; sourceTree = "<group>"; };
+		1444F5352A01903A006632B4 /* TVProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVProgramViewController.swift; sourceTree = "<group>"; };
+		1444F5372A019056006632B4 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		1444F5392A019069006632B4 /* ParamountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamountViewController.swift; sourceTree = "<group>"; };
 		14489BBF29E941AE00DB46AC /* SOPT_TVING.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT_TVING.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14489BC229E941AE00DB46AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14489BC429E941AE00DB46AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,8 +159,8 @@
 		1444F4D129FFC702006632B4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1444F4CF29FFC3A3006632B4 /* HomeTableViewCell.swift */,
-				1444F4D329FFC746006632B4 /* HomeHeaderView.swift */,
+				1444F52D2A018E06006632B4 /* NaviView.swift */,
+				1444F52F2A018EDC006632B4 /* MenuCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,7 +168,12 @@
 		1444F4D229FFC707006632B4 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				1444F4C229FED6B2006632B4 /* HomeViewController.swift */,
+				1444F4C229FED6B2006632B4 /* MainViewController.swift */,
+				1444F5312A018FCA006632B4 /* HomeViewController.swift */,
+				1444F5332A019011006632B4 /* StreamingTViewController.swift */,
+				1444F5352A01903A006632B4 /* TVProgramViewController.swift */,
+				1444F5372A019056006632B4 /* MovieViewController.swift */,
+				1444F5392A019069006632B4 /* ParamountViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -166,12 +181,28 @@
 		1444F4D529FFDD1E006632B4 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				1444F4D629FFDD46006632B4 /* MyPageViewController.swift */,
-				1444F4D82A001B9C006632B4 /* MyPageTableViewCell.swift */,
-				1444F4DA2A002042006632B4 /* MyPageHeaderView.swift */,
-				1444F4DC2A0030F1006632B4 /* MyPageFooterView.swift */,
+				1444F4E12A014751006632B4 /* VC */,
+				1444F4E02A014748006632B4 /* View */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		1444F4E02A014748006632B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1444F4D82A001B9C006632B4 /* MyPageTableViewCell.swift */,
+				1444F4DC2A0030F1006632B4 /* MyPageFooterView.swift */,
+				1444F4DA2A002042006632B4 /* MyPageHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1444F4E12A014751006632B4 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				1444F4D629FFDD46006632B4 /* MyPageViewController.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		14489BB629E941AE00DB46AC = {
@@ -404,26 +435,31 @@
 				14489BDC29E942A000DB46AC /* UIView+.swift in Sources */,
 				1444F4C029FED569006632B4 /* TabBarController.swift in Sources */,
 				1444F4CC29FED7CD006632B4 /* RecordViewController.swift in Sources */,
+				1444F5322A018FCA006632B4 /* HomeViewController.swift in Sources */,
 				1444F4C929FED7B8006632B4 /* SearchViewController.swift in Sources */,
 				14489BE229E9533F00DB46AC /* ImageLiterals.swift in Sources */,
-				1444F4D029FFC3A3006632B4 /* HomeTableViewCell.swift in Sources */,
 				14489BC729E941AE00DB46AC /* LoginVC.swift in Sources */,
-				1444F4C329FED6B2006632B4 /* HomeViewController.swift in Sources */,
+				1444F4C329FED6B2006632B4 /* MainViewController.swift in Sources */,
 				14E07DB129EAC9BE0080FECA /* CustomTextField.swift in Sources */,
 				14489BC329E941AE00DB46AC /* AppDelegate.swift in Sources */,
 				1444F4C629FED7A5006632B4 /* UpcomingViewController.swift in Sources */,
-				1444F4D429FFC746006632B4 /* HomeHeaderView.swift in Sources */,
+				1444F5382A019056006632B4 /* MovieViewController.swift in Sources */,
+				1444F5362A01903A006632B4 /* TVProgramViewController.swift in Sources */,
 				14E07DB529F2C5BB0080FECA /* UITextField+.swift in Sources */,
 				1444F4D92A001B9C006632B4 /* MyPageTableViewCell.swift in Sources */,
+				1444F52E2A018E06006632B4 /* NaviView.swift in Sources */,
 				14489BE029E9451E00DB46AC /* ColorLiterals.swift in Sources */,
 				1444F4CE29FFC156006632B4 /* NSObject+.swift in Sources */,
+				1444F5302A018EDC006632B4 /* MenuCollectionViewCell.swift in Sources */,
 				14E07DB829F2D5680080FECA /* CreateAccountVC.swift in Sources */,
 				1444F4DD2A0030F1006632B4 /* MyPageFooterView.swift in Sources */,
 				1444F4D729FFDD46006632B4 /* MyPageViewController.swift in Sources */,
 				1444F4BD29FC2A57006632B4 /* UIViewController+.swift in Sources */,
 				14E07DBA29F2DC220080FECA /* WelcomeVC.swift in Sources */,
 				14E07DBC29F32A620080FECA /* String+.swift in Sources */,
+				1444F53A2A019069006632B4 /* ParamountViewController.swift in Sources */,
 				1444F4DF2A0045A6006632B4 /* StringLiterals.swift in Sources */,
+				1444F5342A019011006632B4 /* StreamingTViewController.swift in Sources */,
 				14489BC529E941AE00DB46AC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

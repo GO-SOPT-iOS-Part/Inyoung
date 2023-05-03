@@ -1,8 +1,8 @@
 //
-//  HomeHeaderView.swift
+//  NaviView.swift
 //  SOPT_TVING
 //
-//  Created by 김인영 on 2023/05/01.
+//  Created by 김인영 on 2023/05/03.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class HomeHeaderView: UITableViewHeaderFooterView {
+final class NaviView: UIView {
     
     var profileButtonTappedClosure: (()-> Void)?
     
@@ -27,8 +27,8 @@ final class HomeHeaderView: UITableViewHeaderFooterView {
         $0.addTarget(self, action: #selector(profileButtonDidTap), for: .touchUpInside)
     }
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setLayout()
         setUI()
     }
@@ -43,10 +43,10 @@ final class HomeHeaderView: UITableViewHeaderFooterView {
     }
 }
 
-extension HomeHeaderView {
+extension NaviView {
     
     private func setUI() {
-        containerView.backgroundColor = .tvingBlack
+        containerView.backgroundColor = .clear
     }
     
     private func setLayout() {
