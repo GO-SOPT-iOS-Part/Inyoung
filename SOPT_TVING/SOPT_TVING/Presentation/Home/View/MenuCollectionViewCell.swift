@@ -36,7 +36,8 @@ class MenuCollectionViewCell: UICollectionViewCell {
     }
     
     private var menuLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 14, weight: .bold)
+        $0.font = .Font(.regular, size: 17)
+        $0.textColor = .tvingWhite
     }
     
     private let menuUnderLineView = UIView()

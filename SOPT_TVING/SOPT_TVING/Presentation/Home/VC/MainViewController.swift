@@ -34,6 +34,7 @@ final class MainViewController: UIViewController {
     
     // MARK: - UI Components
     
+    private let scrollView = UIScrollView()
     private let naviBar = NaviView()
     private let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
@@ -50,6 +51,7 @@ final class MainViewController: UIViewController {
         let vc = UIPageViewController(transitionStyle: .scroll,
                                       navigationOrientation: .horizontal,
                                       options: nil)
+        vc.view.backgroundColor = .clear
         return vc
     }()
     
@@ -61,6 +63,8 @@ final class MainViewController: UIViewController {
         registerCells()
         setupDelegate()
         setFirstIndexSelected()
+        tabMyProfileImage()
+        scrollView.backgroundColor = .tvingBlack
     }
     
     private func registerCells() {
@@ -69,6 +73,8 @@ final class MainViewController: UIViewController {
     }
     
     private func setupDelegate() {
+        scrollView.delegate = self
+        
         pageViewController.dataSource = self
         pageViewController.delegate = self
     }
@@ -96,6 +102,14 @@ final class MainViewController: UIViewController {
                                       animated: true,
                                       scrollPosition: .centeredHorizontally)
     }
+    
+    private func tabMyProfileImage() {
+        naviBar.profileButtonTappedClosure = {[weak self] in
+            let myPageVC = MyPageViewController()
+            myPageVC.hidesBottomBarWhenPushed = true
+            self?.navigationController?.pushViewController(myPageVC, animated: true)
+        }
+    }
 }
 
 // MARK: - UI & Layout
@@ -103,24 +117,60 @@ final class MainViewController: UIViewController {
 extension MainViewController {
     
     private func setLayout() {
-        view.addSubviews(pageViewController.view, menuCollectionView)
-        pageViewController.view.addSubview(naviBar)
+        view.addSubviews(scrollView)
+        scrollView.addSubviews(pageViewController.view, naviBar, menuCollectionView)
         
-        naviBar.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(44)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(50)
-        }
-        
-        menuCollectionView.snp.makeConstraints {
-            $0.top.equalTo(naviBar.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(41)
+        scrollView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
         }
         
         pageViewController.view.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(1300)
+            $0.bottom.equalToSuperview()
+        }
+        
+        menuCollectionView.snp.makeConstraints {
+            $0.top.equalTo(naviBar.snp.bottom)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(41)
+        }
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let topInset = windowScene.windows.first?.safeAreaInsets.top else { return }
+        
+        naviBar.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(topInset)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(50)
+        }
+    }
+}
+
+// MARK: - ScrollView Delegate
+
+extension MainViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let topInset = windowScene.windows.first?.safeAreaInsets.top else { return }
+        if offsetY > topInset {
+            let translation = CGAffineTransform(translationX: 0, y: offsetY - topInset)
+            menuCollectionView.transform = translation
+            menuCollectionView.backgroundColor = .tvingBlack.withAlphaComponent(0.8)
+            scrollView.contentInsetAdjustmentBehavior = .scrollableAxes
+        } else if offsetY > 0 {
+            naviBar.isHidden  = true
+        } else {
+            let translation = CGAffineTransform(translationX: 0, y: 0)
+            menuCollectionView.transform = translation
+            menuCollectionView.backgroundColor = .clear
+            naviBar.isHidden = false
+            scrollView.contentInsetAdjustmentBehavior = .never
         }
     }
 }
@@ -154,7 +204,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: menuName[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.Font(.regular, size: 17)]).width + 28, height: 27)
+        return CGSize(width: menuName[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.Font(.regular, size: 17)]).width + 28, height: 37)
     }
 }
 
