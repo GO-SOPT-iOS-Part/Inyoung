@@ -42,7 +42,7 @@ final class MyPageViewController: UIViewController {
     
     @objc
     private func backButtonDidTap() {
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: false)
     }
     
     private func registerCells() {

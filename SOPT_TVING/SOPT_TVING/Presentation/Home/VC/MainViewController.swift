@@ -120,6 +120,9 @@ extension MainViewController {
         view.addSubviews(scrollView)
         scrollView.addSubviews(pageViewController.view, naviBar, menuCollectionView)
         
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let topInset = windowScene.windows.first?.safeAreaInsets.top else { return }
+        
         scrollView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -128,7 +131,7 @@ extension MainViewController {
         pageViewController.view.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            $0.height.equalTo(1300)
+            $0.height.equalToSuperview().offset(41+50)
             $0.bottom.equalToSuperview()
         }
         
@@ -137,9 +140,6 @@ extension MainViewController {
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(41)
         }
-        
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let topInset = windowScene.windows.first?.safeAreaInsets.top else { return }
         
         naviBar.snp.makeConstraints {
             $0.top.equalToSuperview().offset(topInset)
