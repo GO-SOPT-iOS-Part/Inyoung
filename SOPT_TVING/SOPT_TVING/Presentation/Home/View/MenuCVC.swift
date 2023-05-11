@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MenuCollectionViewCell: UICollectionViewCell {
+class MenuCVC: UICollectionViewCell {
     
     override var isHighlighted : Bool {
         didSet {
@@ -53,7 +53,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension MenuCollectionViewCell {
+extension MenuCVC {
     
     private func setLayout() {
         

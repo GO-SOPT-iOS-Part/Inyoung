@@ -1,8 +1,8 @@
 //
-//  HomeTabViewController.swift
+//  TopPosterTableView.swift
 //  SOPT_TVING
 //
-//  Created by 김인영 on 2023/05/03.
+//  Created by 김인영 on 2023/05/11.
 //
 
 import UIKit
@@ -10,14 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
-class HomeViewController: UIViewController {
-    
-    private let collectionViewFlowLayout = UICollectionViewFlowLayout()
-    private lazy var topPosterCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
-        $0.showsHorizontalScrollIndicator = false
-        $0.isPagingEnabled = true
-    }
-    
+class TopPosterCollectionView: UITableViewCell {
+
     private let dataSource: [UIColor] = [.red, .orange, .yellow, .green, .blue]
     private lazy var increasedDataSource: [UIColor] = {
         dataSource + dataSource + dataSource
@@ -26,76 +20,68 @@ class HomeViewController: UIViewController {
         dataSource.count
     }
     
-    // MARK: - Control Property
-    
     private var scrollToEnd: Bool = false
     private var scrollToBegin: Bool = false
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
+        $0.scrollDirection = .horizontal
+    }
+    
+    private lazy var topPosterCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
+        $0.showsHorizontalScrollIndicator = false
+        $0.isPagingEnabled = true
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setDelegate()
         registerCells()
         setLayout()
-        setDelegate()
-        setUI()
         setPosterScroll()
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setDelegate() {
         topPosterCollectionView.delegate = self
         topPosterCollectionView.dataSource = self
     }
     
     private func registerCells() {
-        topPosterCollectionView.register(TopPosterCollectionViewCell.self, forCellWithReuseIdentifier: TopPosterCollectionViewCell.className)
-    }
-}
-
-extension HomeViewController {
-    private func setUI() {
-        view.backgroundColor = .tvingBlack
-        topPosterCollectionView.backgroundColor = .tvingGray1
-        
-        collectionViewFlowLayout.scrollDirection = .horizontal
+        topPosterCollectionView.register(TopPosterCVC.self, forCellWithReuseIdentifier: TopPosterCVC.className)
     }
     
     private func setLayout() {
-        view.addSubviews(topPosterCollectionView)
+        addSubviews(topPosterCollectionView)
         
         topPosterCollectionView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalTo(500)
+            $0.edges.equalToSuperview()
         }
     }
-    
     private func setPosterScroll() {
-        topPosterCollectionView.scrollToItem(at: IndexPath(item: originalDataSourceCount, section: 0),
-                                             at: .centeredHorizontally,
-                                             animated: true)
+        collectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 500) // 여기서 200은 셀의 높이입니다.
+            topPosterCollectionView.collectionViewLayout = collectionViewFlowLayout
+            topPosterCollectionView.scrollToItem(at: IndexPath(item: originalDataSourceCount, section: 0),
+                                                 at: .centeredHorizontally,
+                                                 animated: true)
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TopPosterCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return originalDataSourceCount * 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopPosterCollectionViewCell.className, for: indexPath) as? TopPosterCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopPosterCVC.className, for: indexPath) as? TopPosterCVC else { return UICollectionViewCell() }
         cell.backgroundColor = increasedDataSource[indexPath.item]
         return cell
     }
 }
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.bounds.width, height: 500)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-}
-
-extension HomeViewController: UIScrollViewDelegate {
+extension TopPosterCollectionView: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let beginOffset = topPosterCollectionView.frame.width * CGFloat(originalDataSourceCount)
         let endOffset = topPosterCollectionView.frame.width * CGFloat(originalDataSourceCount * 2 - 1)

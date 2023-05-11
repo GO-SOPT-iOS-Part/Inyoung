@@ -10,17 +10,17 @@ import UIKit
 import SnapKit
 import Then
 
-final class MainViewController: UIViewController {
+final class MainVC: UIViewController {
 
     // MARK: - Properties
     
     var menuName : [String] = ["홈", "실시간", "TV프로그램", "영화", "파라마운트+"]
     
-    private let homeVC = HomeViewController()
-    private let streamingVC = StreamingViewController()
-    private let tvProgramVC = TVProgramViewController()
-    private let movieVC = MovieViewController()
-    private let paramountVC = ParamountViewController()
+    private let homeVC = HomeVC()
+    private let streamingVC = StreamingVC()
+    private let tvProgramVC = TVProgramVC()
+    private let movieVC = MovieVC()
+    private let paramountVC = ParamountVC()
     
     lazy var dataViewControllers: [UIViewController] = {
         return [homeVC, streamingVC, tvProgramVC, movieVC, paramountVC]
@@ -33,8 +33,7 @@ final class MainViewController: UIViewController {
     }
     
     // MARK: - UI Components
-    
-    private let scrollView = UIScrollView()
+
     private let naviBar = NaviView()
     private let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
@@ -47,11 +46,10 @@ final class MainViewController: UIViewController {
         $0.delegate = self
         $0.dataSource = self
     }
-    lazy var pageViewController: UIPageViewController = {
+    private lazy var pageViewController: UIPageViewController = {
         let vc = UIPageViewController(transitionStyle: .scroll,
                                       navigationOrientation: .horizontal,
                                       options: nil)
-        vc.view.backgroundColor = .clear
         return vc
     }()
     
@@ -64,17 +62,22 @@ final class MainViewController: UIViewController {
         setupDelegate()
         setFirstIndexSelected()
         tabMyProfileImage()
-        scrollView.backgroundColor = .tvingBlack
+        
+        for view in self.view.subviews {
+            if let scrollView = view as? UIScrollView {
+                scrollView.delegate = self
+                scrollView.contentInsetAdjustmentBehavior = .never
+                break
+            }
+        }
     }
     
     private func registerCells() {
-        menuCollectionView.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.className
-        )
+        menuCollectionView.register(MenuCVC.self, forCellWithReuseIdentifier: MenuCVC.className)
     }
     
     private func setupDelegate() {
-        scrollView.delegate = self
-        
+        homeVC.delegate = self
         pageViewController.dataSource = self
         pageViewController.delegate = self
     }
@@ -114,36 +117,29 @@ final class MainViewController: UIViewController {
 
 // MARK: - UI & Layout
 
-extension MainViewController {
+extension MainVC {
     
     private func setLayout() {
-        view.addSubviews(scrollView)
-        scrollView.addSubviews(pageViewController.view, naviBar, menuCollectionView)
+        view.addSubviews(pageViewController.view, naviBar, menuCollectionView)
         
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let topInset = windowScene.windows.first?.safeAreaInsets.top else { return }
         
-        scrollView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-        }
-        
         pageViewController.view.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            $0.height.equalToSuperview().offset(41+50)
+            $0.leading.trailing.bottom.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
         
         menuCollectionView.snp.makeConstraints {
             $0.top.equalTo(naviBar.snp.bottom)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(41)
         }
         
         naviBar.snp.makeConstraints {
             $0.top.equalToSuperview().offset(topInset)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(50)
         }
     }
@@ -151,25 +147,29 @@ extension MainViewController {
 
 // MARK: - ScrollView Delegate
 
-extension MainViewController: UIScrollViewDelegate {
+extension MainVC: HomeVCProtocol {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func tableViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
-        
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let topInset = windowScene.windows.first?.safeAreaInsets.top else { return }
-        if offsetY > topInset {
-            let translation = CGAffineTransform(translationX: 0, y: offsetY - topInset)
+        
+        if offsetY >= topInset {
+            let translation = CGAffineTransform(translationX: 0, y: -topInset)
             menuCollectionView.transform = translation
             menuCollectionView.backgroundColor = .tvingBlack.withAlphaComponent(0.8)
+            naviBar.isHidden = true
             scrollView.contentInsetAdjustmentBehavior = .scrollableAxes
-        } else if offsetY > 0 {
-            naviBar.isHidden  = true
-        } else {
+        } else if offsetY > 0 && offsetY < topInset  {
+            naviBar.isHidden = true
+            let translation = CGAffineTransform(translationX: 0, y: -offsetY)
+            menuCollectionView.transform = translation
+        }
+        else {
+            naviBar.isHidden = false
             let translation = CGAffineTransform(translationX: 0, y: 0)
             menuCollectionView.transform = translation
             menuCollectionView.backgroundColor = .clear
-            naviBar.isHidden = false
             scrollView.contentInsetAdjustmentBehavior = .never
         }
     }
@@ -177,13 +177,13 @@ extension MainViewController: UIScrollViewDelegate {
 
 // MARK: - CollectionView Delegate & DataSource
 
-extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MainVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menuName.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.className, for: indexPath) as? MenuCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCVC.className, for: indexPath) as? MenuCVC else { return UICollectionViewCell() }
         cell.dataBind(menuLabel: menuName[indexPath.item])
         return cell
     }
@@ -210,7 +210,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
 
 // MARK: - PageViewController Delegate & DataSource
 
-extension MainViewController : UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+extension MainVC : UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let index = dataViewControllers.firstIndex(of: viewController) else { return nil }

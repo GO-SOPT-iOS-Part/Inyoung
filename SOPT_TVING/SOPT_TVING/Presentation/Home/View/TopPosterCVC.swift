@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopPosterCollectionViewCell: UICollectionViewCell {
+class TopPosterCVC: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
