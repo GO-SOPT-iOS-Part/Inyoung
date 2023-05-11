@@ -40,5 +40,9 @@ struct ImageLiterals {
     
     struct Sample {
         static let profileImage = UIImage(named: "profileImage1")
+        static let posterImage1 = UIImage(named: "posterImage1")
+        static let posterImage2 = UIImage(named: "posterImage2")
+        static let posterImage3 = UIImage(named: "posterImage3")
+        static let posterImage4 = UIImage(named: "posterImage4")
     }
 }
