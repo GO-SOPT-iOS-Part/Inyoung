@@ -12,7 +12,7 @@ class ContentCVC: UICollectionViewCell {
     private let posterImageView = UIImageView().then {
         $0.image = ImageLiterals.Sample.posterImage1
         $0.clipsToBounds = true
-        $0.layer.cornerRadius = 3
+        $0.layer.cornerRadius = 5
     }
     private let posterName = UILabel().then {
         $0.text = "영화 이름"
@@ -22,6 +22,7 @@ class ContentCVC: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUI()
         setLayout()
     }
     
@@ -37,12 +38,16 @@ class ContentCVC: UICollectionViewCell {
 
 extension ContentCVC {
     
+    private func setUI() {
+        backgroundColor = .tvingBlack
+    }
+    
     private func setLayout() {
         contentView.addSubviews(posterImageView, posterName)
         
         posterImageView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalTo(145)
+            $0.height.equalTo(200)
         }
         
         posterName.snp.makeConstraints {
