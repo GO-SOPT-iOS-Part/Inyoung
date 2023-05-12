@@ -17,9 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         self.window = UIWindow(windowScene: windowScene)
-         let navigationController = UINavigationController(rootViewController: LoginVC())
+         let navigationController = UINavigationController(rootViewController: TabBarController())
         self.window?.rootViewController = navigationController
          navigationController.setNavigationBarHidden(true, animated: false)
         self.window?.makeKeyAndVisible()
+    }
+    
+    func changeRootVC(_ vc:UIViewController, animated: Bool) {
+        guard let window = self.window else { return }
+        window.rootViewController = UINavigationController(rootViewController: vc)
+        vc.navigationController?.navigationBar.isHidden = true
     }
 }
