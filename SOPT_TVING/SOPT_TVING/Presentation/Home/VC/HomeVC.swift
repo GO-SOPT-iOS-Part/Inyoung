@@ -111,7 +111,7 @@ extension HomeVC {
                 
                 // MovieListModel 배열로 변환
                 self.movieArray = results.map { movie in
-                    MovieListModel(title: movie.title, image: movie.posterPath)
+                    MovieListModel(title: movie.title, imageURL: movie.posterPath)
                 }
                 self.tableView.reloadData()
             default:

@@ -16,7 +16,7 @@ class ContentCVC: UICollectionViewCell {
     }
     private let posterName = UILabel().then {
         $0.text = "영화 이름"
-        $0.font = .Font(.medium, size: 10)
+        $0.font = .Font(.medium, size: 12)
         $0.textColor = .tvingGray2
     }
     
@@ -31,6 +31,7 @@ class ContentCVC: UICollectionViewCell {
     
     func dataBind(data: MovieListModel) {
         posterName.text = data.title
+        posterImageView.getImageFromURL(data.imageURL)
     }
 }
 

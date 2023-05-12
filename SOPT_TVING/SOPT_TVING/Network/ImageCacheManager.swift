@@ -17,7 +17,7 @@ class ImageCacheManager {
 
   static func getImage (
     _ url: String,
-    completion: @escaping (Result<UIImage, ImageNetworkError>) -> Void
+    completion: @escaping (Swift.Result<UIImage, ImageNetworkError>) -> Void
   ) {
     if url.isEmpty { completion(.failure(.default)) }
     let cachedKey = NSString(string: url)
@@ -48,7 +48,7 @@ class ImageCacheManager {
 
 extension UIImageView {
   func getImageFromURL(_ url: String) {
-      let imageURL = "https://image.tmdb.org/t/p/original/" + url + "@2x.png"
+    let imageURL = "https://image.tmdb.org/t/p/original" + url
     ImageCacheManager.getImage(imageURL) { result in
       switch result {
       case .failure(.default):

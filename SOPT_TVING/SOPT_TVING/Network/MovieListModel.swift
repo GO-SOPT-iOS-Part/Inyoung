@@ -9,5 +9,5 @@ import Foundation
 
 struct MovieListModel {
     let title: String
-    let image: String
+    let imageURL: String
 }
