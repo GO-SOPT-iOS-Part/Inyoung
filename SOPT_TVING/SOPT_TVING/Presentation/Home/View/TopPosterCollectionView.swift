@@ -12,7 +12,7 @@ import Then
 
 class TopPosterCollectionView: UITableViewCell {
 
-    private let dataSource: [UIColor] = [.red, .orange, .yellow, .green, .blue]
+    private let dataSource: [UIColor] = [.black, .orange, .yellow, .green, .blue]
     private lazy var increasedDataSource: [UIColor] = {
         dataSource + dataSource + dataSource
     }()
@@ -60,12 +60,13 @@ class TopPosterCollectionView: UITableViewCell {
             $0.edges.equalToSuperview()
         }
     }
+    
     private func setPosterScroll() {
-        collectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 500) // 여기서 200은 셀의 높이입니다.
-            topPosterCollectionView.collectionViewLayout = collectionViewFlowLayout
-            topPosterCollectionView.scrollToItem(at: IndexPath(item: originalDataSourceCount, section: 0),
-                                                 at: .centeredHorizontally,
-                                                 animated: true)
+        collectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
+        topPosterCollectionView.collectionViewLayout = collectionViewFlowLayout
+        topPosterCollectionView.scrollToItem(at: IndexPath(item: originalDataSourceCount, section: 0),
+                                             at: .centeredHorizontally,
+                                             animated: true)
     }
 }
 

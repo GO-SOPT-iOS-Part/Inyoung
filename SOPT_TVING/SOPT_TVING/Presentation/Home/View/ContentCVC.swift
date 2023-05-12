@@ -28,6 +28,10 @@ class ContentCVC: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func dataBind(data: MovieListModel) {
+        posterName.text = data.title
+    }
 }
 
 extension ContentCVC {
@@ -42,7 +46,7 @@ extension ContentCVC {
         
         posterName.snp.makeConstraints {
             $0.top.equalTo(posterImageView.snp.bottom).offset(3)
-            $0.leading.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
     }
 }

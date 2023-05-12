@@ -12,6 +12,10 @@ import Then
 
 final class ContentCollectionView: UITableViewCell {
     
+    // MARK: - Properties
+    
+    private var nowPlayingMovie: [MovieListModel] = []
+    
     private let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
         $0.minimumInteritemSpacing = 8
         $0.scrollDirection = .horizontal
@@ -19,7 +23,9 @@ final class ContentCollectionView: UITableViewCell {
     }
     
     private lazy var contentCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
+        $0.showsHorizontalScrollIndicator = false
         $0.isScrollEnabled = true
+        $0.backgroundColor = .tvingBlack
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -41,6 +47,11 @@ final class ContentCollectionView: UITableViewCell {
         contentCollectionView.delegate = self
         contentCollectionView.dataSource = self
     }
+    
+    func setData(data: [MovieListModel]) {
+        self.nowPlayingMovie = data
+        self.contentCollectionView.reloadData() // 영화 목록 반영
+    }
 }
 
 extension ContentCollectionView {
@@ -55,11 +66,12 @@ extension ContentCollectionView {
 
 extension ContentCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return nowPlayingMovie.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCVC.className, for: indexPath) as? ContentCVC else { return UICollectionViewCell() }
+        cell.dataBind(data: nowPlayingMovie[indexPath.item])
         return cell
     }
 }

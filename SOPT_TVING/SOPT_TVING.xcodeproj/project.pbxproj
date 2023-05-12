@@ -45,6 +45,10 @@
 		14DDF0112A0CA32A001ADA85 /* ContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDF0102A0CA32A001ADA85 /* ContentCollectionView.swift */; };
 		14DDF0132A0CC50B001ADA85 /* TopPosterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDF0122A0CC50B001ADA85 /* TopPosterCollectionView.swift */; };
 		14DDF0152A0CDF75001ADA85 /* ContentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDF0142A0CDF75001ADA85 /* ContentCVC.swift */; };
+		14DDF0172A0D7001001ADA85 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDF0162A0D7001001ADA85 /* MovieResponse.swift */; };
+		14DDF0192A0D70D6001ADA85 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDF0182A0D70D6001ADA85 /* MovieService.swift */; };
+		14DDF01B2A0DCF53001ADA85 /* MovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDF01A2A0DCF53001ADA85 /* MovieListModel.swift */; };
+		14DDF01D2A0DEA71001ADA85 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDF01C2A0DEA71001ADA85 /* ImageCacheManager.swift */; };
 		14E07DA529E96FF90080FECA /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14E07D9C29E96FF80080FECA /* Pretendard-SemiBold.otf */; };
 		14E07DA629E96FF90080FECA /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14E07D9D29E96FF80080FECA /* Pretendard-Light.otf */; };
 		14E07DA729E96FF90080FECA /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14E07D9E29E96FF80080FECA /* Pretendard-Black.otf */; };
@@ -101,6 +105,10 @@
 		14DDF0102A0CA32A001ADA85 /* ContentCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionView.swift; sourceTree = "<group>"; };
 		14DDF0122A0CC50B001ADA85 /* TopPosterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPosterCollectionView.swift; sourceTree = "<group>"; };
 		14DDF0142A0CDF75001ADA85 /* ContentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCVC.swift; sourceTree = "<group>"; };
+		14DDF0162A0D7001001ADA85 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
+		14DDF0182A0D70D6001ADA85 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		14DDF01A2A0DCF53001ADA85 /* MovieListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListModel.swift; sourceTree = "<group>"; };
+		14DDF01C2A0DEA71001ADA85 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		14E07D9C29E96FF80080FECA /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		14E07D9D29E96FF80080FECA /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		14E07D9E29E96FF80080FECA /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -344,6 +352,10 @@
 			children = (
 				145DC3182A0623D200D2FB50 /* Config.swift */,
 				145DC31A2A0623EB00D2FB50 /* NetworkResult.swift */,
+				14DDF0162A0D7001001ADA85 /* MovieResponse.swift */,
+				14DDF0182A0D70D6001ADA85 /* MovieService.swift */,
+				14DDF01A2A0DCF53001ADA85 /* MovieListModel.swift */,
+				14DDF01C2A0DEA71001ADA85 /* ImageCacheManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -463,12 +475,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DDF0172A0D7001001ADA85 /* MovieResponse.swift in Sources */,
 				1444F4DB2A002042006632B4 /* MyPageHeaderView.swift in Sources */,
 				14489BF429E95ABA00DB46AC /* FontLiterals.swift in Sources */,
 				14489BDC29E942A000DB46AC /* UIView+.swift in Sources */,
 				1444F4C029FED569006632B4 /* TabBarController.swift in Sources */,
 				1444F4CC29FED7CD006632B4 /* RecordViewController.swift in Sources */,
 				1444F5322A018FCA006632B4 /* HomeVC.swift in Sources */,
+				14DDF01B2A0DCF53001ADA85 /* MovieListModel.swift in Sources */,
+				14DDF01D2A0DEA71001ADA85 /* ImageCacheManager.swift in Sources */,
 				1444F4C929FED7B8006632B4 /* SearchViewController.swift in Sources */,
 				14489BE229E9533F00DB46AC /* ImageLiterals.swift in Sources */,
 				14489BC729E941AE00DB46AC /* LoginVC.swift in Sources */,
@@ -476,6 +491,7 @@
 				14E07DB129EAC9BE0080FECA /* CustomTextField.swift in Sources */,
 				14489BC329E941AE00DB46AC /* AppDelegate.swift in Sources */,
 				14DDF00F2A0CA1F5001ADA85 /* MustWatchCVC.swift in Sources */,
+				14DDF0192A0D70D6001ADA85 /* MovieService.swift in Sources */,
 				1444F4C629FED7A5006632B4 /* UpcomingViewController.swift in Sources */,
 				1444F5382A019056006632B4 /* MovieVC.swift in Sources */,
 				1444F5362A01903A006632B4 /* TVProgramVC.swift in Sources */,
@@ -530,6 +546,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_KEY = f4dc8bed3cf1b9d764bbd9eec6f16587;
+				BASE_URL = "https://api.themoviedb.org/3/movie/";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -590,6 +608,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_KEY = f4dc8bed3cf1b9d764bbd9eec6f16587;
+				BASE_URL = "https://api.themoviedb.org/3/movie/";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -643,9 +663,9 @@
 		14489BD429E941B000DB46AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = f4dc8bed3cf1b9d764bbd9eec6f16587;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://54.180.123.11";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6CP89R9486;
@@ -672,9 +692,9 @@
 		14489BD529E941B000DB46AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = f4dc8bed3cf1b9d764bbd9eec6f16587;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://54.180.123.11";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6CP89R9486;
