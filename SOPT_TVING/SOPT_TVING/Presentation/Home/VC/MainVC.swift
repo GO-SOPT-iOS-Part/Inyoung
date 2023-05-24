@@ -13,7 +13,6 @@ import Then
 final class MainVC: UIViewController {
 
     // MARK: - Properties
-    
     var menuName : [String] = ["홈", "실시간", "TV프로그램", "영화", "파라마운트+"]
     
     private let homeVC = HomeVC()

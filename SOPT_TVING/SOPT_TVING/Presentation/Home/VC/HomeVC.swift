@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
+import Alamofire
+
 protocol HomeVCProtocol: AnyObject {
     func tableViewDidScroll(_ scrollView: UIScrollView)
 }
@@ -19,6 +21,7 @@ class HomeVC: UIViewController {
     // MARK: - Properties
     
     weak var delegate: HomeVCProtocol?
+    private var movieArray: [MovieListModel] = []
     
     // MARK: - UI Components
     
@@ -39,6 +42,7 @@ class HomeVC: UIViewController {
         registerCells()
         setLayout()
         setUI()
+        getMovie()
     }
     private func registerCells() {
         tableView.register(TopPosterCollectionView.self, forCellReuseIdentifier: TopPosterCollectionView.className)
@@ -67,7 +71,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             return 500
         } else {
-            return 200
+            return 240
         }
     }
     
@@ -81,6 +85,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentCollectionView.className, for: indexPath) as? ContentCollectionView else { return UITableViewCell() }
+            if indexPath.row == 1 {
+                cell.setData(data: self.movieArray)
+            }
             return cell
         }
     }
@@ -89,5 +96,28 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 extension HomeVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         delegate?.tableViewDidScroll(scrollView)
+    }
+}
+
+// MARK: - Nerwork
+
+extension HomeVC {
+    func getMovie() {
+        MovieRequest.shared.getNowPlayingMovie { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? MovieResponse else { return }
+                let results = data.results
+                
+                // MovieListModel 배열로 변환
+                self.movieArray = results.map { movie in
+                    MovieListModel(title: movie.title, imageURL: movie.posterPath)
+                }
+                self.tableView.reloadData()
+            default:
+                print("failed")
+                return
+            }
+        }
     }
 }
